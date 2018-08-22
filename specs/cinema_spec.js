@@ -37,10 +37,13 @@ describe('Cinema', function () {
     assert.strictEqual(actual, dunkirk);
   });
   it('should be able to filter films by genre', function(){
-    const actual = cinema.filterByGenre('drama')
+    const actual = cinema.filterByGenre('drama');
     assert.deepStrictEqual(actual, [moonlight, trainspotting])
   });
-  it('should be able to check whether there are some films from a particular year');
+  it('should be able to check whether there are some films from a particular year', function(){
+    const actual = cinema.filterByYear(2017);
+    assert.deepStrictEqual(actual, [bladeRunner, dunkirk, trainspotting])
+  });
   it('should be able to check whether there are no films from a particular year');
   it('should be able to check whether all films are over a particular length');
   it('should be able to calculate total running time of all films');
